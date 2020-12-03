@@ -10,7 +10,7 @@ navigator.mediaDevices
     // get the active track of the stream
     track = stream.getVideoTracks()[0];
   })
-  .catch((err) => document.body.innerHTML += "getUserMedia(): " + err + "\n--------------------------\n");
+  .catch((err) => document.getElementById("errors").innerHTML += "getUserMedia(): " + err + "<br>--------------------------<br>");
 
 function setTorch(value) {
   try{
@@ -22,7 +22,7 @@ function setTorch(value) {
         .catch((e) => console.log(e));
     }
   }catch(err){
-    document.body.innerHTML += "setTorch(): " + err + "\n--------------------------\n"
+    document.getElementById("errors").innerHTML += "setTorch(): " + err + "<br>--------------------------<br>"
   }
   
 }
@@ -37,6 +37,6 @@ function toggleTorch() {
           .catch((e) => console.log(e));
       }
     }catch(err){
-      document.body.innerHTML += "setTorch(): " + err + "\n--------------------------\n"
+      document.getElementById("errors").innerHTML += "setTorch(): " + err + "<br>--------------------------<br>"
     }
   }
