@@ -17,6 +17,7 @@ function setTorch(value) {
     if (track.getCapabilities().torch) {
       track
         .applyConstraints({
+          facingMode: "environment",
           advanced: [{ torch: value }],
         })
         .catch((e) => console.log(e));
@@ -32,11 +33,12 @@ function toggleTorch() {
       if (track.getCapabilities().torch) {
         track
           .applyConstraints({
+            facingMode: "environment",
             advanced: [{ torch: !track.getConstraints()["torch"] }],
           })
           .catch((e) => console.log(e));
       }
     }catch(err){
-      document.getElementById("errors").innerHTML += "setTorch(): " + err + "<br>--------------------------<br>"
+      document.getElementById("errors").innerHTML += "toggleTorch(): " + err + "<br>--------------------------<br>"
     }
   }
