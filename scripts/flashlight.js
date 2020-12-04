@@ -24,6 +24,7 @@ function setTorch(value) {
     }
   }catch(err){
     document.getElementById("errors").innerHTML += "setTorch(): " + err + "<br>--------------------------<br>"
+    document.getElementById("errors").innerHTML += "setTorch() track: " + track + "<br>--------------------------<br>"
   }
   
 }
