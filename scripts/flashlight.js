@@ -8,6 +8,8 @@ navigator.mediaDevices
   })
   .then((stream) => {
     // get the active track of the stream
+    document.getElementById("errors").innerHTML += "getUserMedia() stream: " + stream + "<br>--------------------------<br>";
+    document.getElementById("errors").innerHTML += "getUserMedia() stream.getVideoTracks: " + stream.getVideoTracks() + "<br>--------------------------<br>";
     track = stream.getVideoTracks()[0];
   })
   .catch((err) => document.getElementById("errors").innerHTML += "getUserMedia(): " + err + "<br>--------------------------<br>");
